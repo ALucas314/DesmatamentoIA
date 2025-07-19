@@ -188,8 +188,6 @@ Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](ht
 
 * **Contribuições:** Aberto para issues e pull requests
 
----
 
-```
 
 
