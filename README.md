@@ -69,7 +69,7 @@ cd DesmatamentoIA/AlgoritimoComDashboard
 pip install -r requirements.txt
 
 # Executar análise preditiva
-python src/preditorde_desmatamento.py
+python src/app.py
 
 # Iniciar dashboard interativo (abre em http://localhost:8501)
 streamlit run src/dashboard.py
@@ -170,7 +170,7 @@ import os
 3. Para rodar o script principal (treinamento e análise):
 
 ```bash
-python src/preditorde_desmatamento.py
+python src/app.py
 ```
 
 4. Para iniciar o dashboard interativo:
@@ -187,9 +187,6 @@ Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](ht
 
 ---
 
-## ✉️ Contato
-
-* **Autor:** ALucas314
 * **Contribuições:** Aberto para issues e pull requests
 
 ---
