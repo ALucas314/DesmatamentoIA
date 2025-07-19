@@ -1,4 +1,8 @@
-```markdown
+Claro! O problema é que você está usando blocos de código aninhados com três crases (\`\`\`), e dentro deles tem outros blocos de código também com três crases, o que gera confusão na renderização do Markdown. Para resolver, você pode usar blocos com **quatro crases** externos, ou usar indentação para o bloco do diretório, e evitar barras invertidas desnecessárias.
+
+Aqui está a correção completa e formatada para o seu README em Markdown:
+
+````markdown
 # 🌳 Sistema Avançado de Previsão de Desmatamento
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ALucas314/DesmatamentoIA/blob/AlgoritimoComDashboard/LICENSE)  
@@ -31,23 +35,19 @@ Sistema preditivo para identificação de áreas de risco de desmatamento utiliz
 
 ## 🏗️ Estrutura do Projeto
 
-```
-
-DesmatamentoIA/
-├── AlgoritimoComDashboard/
-│   ├── data/
-│   │   └── dados\_desmatamento.csv
-│   ├── models/
-│   │   ├── AlgoritimosTreinamentoRegressao.py
-│   │   ├── LightGBM\_modelo.pkl
-│   │   ├── RandomForest\_modelo.pkl
-│   │   └── XGBoost\_modelo.pkl
-│   ├── src/
-│   │   ├── app.py
-│   │   ├── preditorde\_desmatamento.py
-│   │   └── dashboard.py
-
-````
+    DesmatamentoIA/
+    ├── AlgoritimoComDashboard/
+    │   ├── data/
+    │   │   └── dados_desmatamento.csv
+    │   ├── models/
+    │   │   ├── AlgoritimosTreinamentoRegressao.py
+    │   │   ├── LightGBM_modelo.pkl
+    │   │   ├── RandomForest_modelo.pkl
+    │   │   └── XGBoost_modelo.pkl
+    │   ├── src/
+    │   │   ├── app.py
+    │   │   ├── preditorde_desmatamento.py
+    │   │   └── dashboard.py
 
 ---
 
@@ -195,4 +195,5 @@ Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](ht
 ---
 
 ```
-```
+
+
