@@ -10,6 +10,9 @@ from lightgbm import LGBMRegressor
 from sklearn.preprocessing import LabelEncoder
 from scipy.stats import mstats, pearsonr
 import warnings
+import pickle
+import os
+
 warnings.filterwarnings("ignore")
 
 sns.set(style="whitegrid", palette="pastel", font_scale=1.2)
@@ -111,6 +114,13 @@ class PreditordeDesmatamentoAvancado:
 
         return modelos_treinados, preds_finais
 
+    def salvar_modelos_pickle(self, modelos_treinados):
+        for nome, modelo in modelos_treinados.items():
+            arquivo = f"{nome}_modelo.pkl"
+            with open(arquivo, "wb") as f:
+                pickle.dump(modelo, f)
+        print("✅ Modelos salvos no mesmo diretório do script.")
+
     def plot_metricas_barras(self, resumo):
         modelos = list(resumo.keys())
         fig, axs = plt.subplots(1, 3, figsize=(18, 5))
@@ -155,7 +165,6 @@ class PreditordeDesmatamentoAvancado:
         plt.figure(figsize=(16, 5 * n))
         y_true = df['areaMunKm'].values
 
-        # Limites para zoom entre os percentis 1% e 99%
         lower_lim = np.percentile(y_true, 1)
         upper_lim = np.percentile(y_true, 99)
 
@@ -163,7 +172,6 @@ class PreditordeDesmatamentoAvancado:
             plt.subplot(n, 1, i)
             y_pred = preds_finais[modelo]
 
-            # Filtra dados para o intervalo dos percentis
             mask = (y_true >= lower_lim) & (y_true <= upper_lim) & (y_pred >= lower_lim) & (y_pred <= upper_lim)
             x_plot = y_true[mask]
             y_plot = y_pred[mask]
@@ -191,7 +199,6 @@ class PreditordeDesmatamentoAvancado:
             print(f"| {modelo:<12} | {met['rmse']:6.4f} | {met['mae']:6.4f} | {met['medae']:7.4f} | {met['mape']:10.2f} | {met['r2']:6.4f} | {met['pearson_r']:11.4f} |")
             print("+--------------+--------+--------+---------+------------+--------+-------------+")
 
-        # Interpretação detalhada texto para cada métrica:
         print("\n📝 Interpretação das Métricas:")
         for modelo, met in resumo.items():
             print(f"\nModelo: {modelo}")
@@ -239,6 +246,9 @@ class PreditordeDesmatamentoAvancado:
         self.plot_previsoes_todos_modelos(df, preds_finais)
 
         self.avaliar_e_relatar_melhor_modelo(resumo_cv)
+
+        # Salva os modelos no mesmo diretório
+        self.salvar_modelos_pickle(modelos_treinados)
 
         return resumo_cv, modelos_treinados, preds_finais
 
