@@ -186,13 +186,13 @@ import os
 3. Para rodar o script principal (treinamento e análise):
 
 ```bash
-python src/preditorde_desmatamento.py
+python src/app.py
 ```
 
 4. Para iniciar o dashboard interativo:
 
 ```bash
-streamlit run src/dashboard.py
+streamlit run src/app.py
 ```
 
 ---
