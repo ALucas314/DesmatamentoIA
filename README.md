@@ -1,6 +1,3 @@
-Claro! O problema é que você está usando blocos de código aninhados com três crases (\`\`\`), e dentro deles tem outros blocos de código também com três crases, o que gera confusão na renderização do Markdown. Para resolver, você pode usar blocos com **quatro crases** externos, ou usar indentação para o bloco do diretório, e evitar barras invertidas desnecessárias.
-
-Aqui está a correção completa e formatada para o seu README em Markdown:
 
 ````markdown
 # 🌳 Sistema Avançado de Previsão de Desmatamento
