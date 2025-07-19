@@ -1,114 +1,101 @@
-Segue um **README.md** bem bonito e intuitivo para você publicar no GitHub junto ao seu projeto:
-
----
-
 # 🌳 Sistema Avançado de Previsão de Desmatamento
 
-Este projeto implementa um **sistema de predição de áreas desmatadas**, comparando três algoritmos de regressão avançados:
-✅ Random Forest
-✅ XGBoost
-✅ LightGBM
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ALucas314/DesmatamentoIA/blob/AlgoritimoComDashboard/LICENSE)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.11.0-FF4B4B.svg)](https://streamlit.io/)
 
-A solução utiliza **validação cruzada com 5 folds**, métricas robustas e gráficos intuitivos para análise de desempenho e previsões.
-O melhor modelo identificado foi o **LightGBM**, com desempenho superior nas métricas de erro.
+🔗 **Repositório:** [https://github.com/ALucas314/DesmatamentoIA/tree/AlgoritimoComDashboard](https://github.com/ALucas314/DesmatamentoIA/tree/AlgoritimoComDashboard)
 
----
+## 📌 Visão Geral
 
-## 📂 Estrutura do projeto
+Sistema preditivo para identificação de áreas de risco de desmatamento utilizando três algoritmos de machine learning:
 
-* `preditorde_desmatamento.py` — código principal com a classe `PreditordeDesmatamentoAvancado`
-* `dados_desmatamento.csv` — dataset (não incluso neste repositório por questões de tamanho/confidencialidade)
-* `README.md` — este arquivo
+- ✅ **Random Forest**
+- ✅ **XGBoost**  
+- ✅ **LightGBM** (melhor desempenho)
 
----
+## 📊 Métricas Comparativas
 
-## 🚀 Principais funcionalidades
-
-✅ Carregamento automático de CSV com detecção de delimitador
-✅ Pré-processamento inteligente com:
-
-* Conversão de datas
-* Criação de variáveis temporais
-* Winsorização para lidar com outliers
-* Log-transform da variável alvo
-
-✅ Treinamento e avaliação com:
-
-* Random Forest
-* XGBoost
-* LightGBM
-
-✅ Validação cruzada (KFold) com 5 divisões
-✅ Métricas avaliadas:
-
-* RMSE
-* MAE
-* MAPE
-* MEDAE
-* R²
-* Correlação de Pearson
-
-✅ Geração de gráficos intuitivos:
-
-* Comparação das métricas entre os modelos (barras e linhas)
-* Dispersão das previsões vs valores reais
-
----
-
-## 📊 Resultados obtidos
-
-| Modelo        | RMSE       | MAE        | MAPE       | R²         | Pearson R  |
-| ------------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| Random Forest | 0.2749     | 0.1353     | 73.61%     | 0.1792     | 0.4302     |
-| XGBoost       | 0.2739     | 0.1347     | 73.54%     | 0.1859     | 0.4376     |
+| Modelo        | RMSE   | MAE    | MAPE   | R²     | Pearson R |
+|---------------|--------|--------|--------|--------|-----------|
+| Random Forest | 0.2749 | 0.1353 | 73.61% | 0.1792 | 0.4302    |
+| XGBoost       | 0.2739 | 0.1347 | 73.54% | 0.1859 | 0.4376    |
 | **LightGBM**  | **0.2736** | **0.1338** | **73.07%** | **0.1877** | **0.4418** |
 
-🏆 Melhor modelo: **LightGBM**
+## 🏗️ Estrutura do Projeto
 
----
+DesmatamentoIA/
+├── AlgoritimoComDashboard/
+│ ├── data/ dados_desmatamento.csv
+│ ├── models/
+│ │ ├── AlgoritimosTreinamentoRegressao.py
+│ │ ├── LightGBM_modelo.pkl
+│ │ ├── RandomForest_modelo.pkl
+│ │ ├── XGBoost_modelo.pkl
+│ ├── src/
+│ │ ├── app.py
 
-## 📈 Exemplos de gráficos
 
-* Barras comparando RMSE, MAE e MAPE entre os modelos
-* Linhas mostrando R² e correlação
-* Dispersão previsões vs valores reais (com outliers filtrados para melhor visualização)
 
----
+## 🚀 Como Executar
 
-## 📚 Como executar
+### Pré-requisitos
+- Python 3.8+
+- Git
 
-1️⃣ Instale as dependências:
-
+### Instalação
 ```bash
+git clone https://github.com/ALucas314/DesmatamentoIA.git
+cd DesmatamentoIA/AlgoritimoComDashboard
 pip install -r requirements.txt
-```
 
-2️⃣ Rode o script principal:
+# Executar análise preditiva
+python src/preditorde_desmatamento.py
 
-```bash
-python preditorde_desmatamento.py
-```
+# Iniciar dashboard (http://localhost:8501)
+streamlit run src/dashboard.py
 
-3️⃣ Veja as métricas no terminal e visualize os gráficos gerados.
+🛠️ Funcionalidades
+Pré-processamento
+Tratamento automático de datas
 
----
+Winsorização de outliers
 
-## 💡 Notas
+Transformação log da variável alvo
 
-* O dataset utilizado contém **18 573 linhas e 8 colunas**.
-* Em cada fold são utilizados:
+Criação de features temporais
 
-  * \~14 858 linhas para treino (\~80%)
-  * \~3 715 linhas para teste (\~20%)
+Modelagem
+Validação cruzada (5 folds)
 
----
+Otimização de hiperparâmetros
 
-## ✨ Autor
+Métricas robustas de avaliação
 
-**Desenvolvido por \[Seu Nome]**
-Um estudo prático de modelos de machine learning para previsão ambiental.
-Sinta-se à vontade para abrir issues ou enviar PRs!
+Visualização
+Gráficos comparativos
 
----
+Análise de dispersão
 
-Se quiser, posso também gerar o `requirements.txt` ou um badge para o README com as métricas do LightGBM. Quer?
+Dashboard interativo
+
+📚 Dependências
+python
+numpy==1.21.5
+pandas==1.3.5
+scikit-learn==1.0.2
+xgboost==1.5.1
+lightgbm==3.3.2
+matplotlib==3.5.1
+seaborn==0.11.2
+plotly==5.6.0
+streamlit==1.11.0
+📝 Licença
+Este projeto está licenciado sob a MIT License.
+
+✉️ Contato
+Autor: ALucas314
+Contribuições: Aberto para issues e pull requests
+
+text
+New chat
