@@ -46,8 +46,7 @@ Sistema preditivo para identificação de áreas de risco de desmatamento utiliz
     │   │   └── XGBoost_modelo.pkl
     │   ├── src/
     │   │   ├── app.py
-    │   │   ├── preditorde_desmatamento.py
-    │   │   └── dashboard.py
+
 
 ---
 
