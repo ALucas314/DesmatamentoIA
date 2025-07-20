@@ -166,13 +166,13 @@ import os
 3. Para rodar o script principal (treinamento e análise):
 
 ```bash
-python src/app.py
+cd src
 ```
 
 4. Para iniciar o dashboard interativo:
 
 ```bash
-streamlit run src/dashboard.py
+streamlit run app.py
 ```
 
 ---
