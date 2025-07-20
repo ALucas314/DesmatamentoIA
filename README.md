@@ -177,11 +177,6 @@ streamlit run app.py
 
 ---
 
-## 📝 Licença
-
-Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](https://github.com/ALucas314/DesmatamentoIA/blob/AlgoritimoComDashboard/LICENSE) para mais detalhes.
-
----
 
 * **Contribuições:** Aberto para issues e pull requests
 
