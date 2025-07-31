@@ -64,11 +64,11 @@ cd DesmatamentoIA/AlgoritimoComDashboard
 
 pip install -r requirements.txt
 
-# Executar análise preditiva
-python src/app.py
+# Entrar na pasta onde está o dashboard
+cd src
 
 # Iniciar dashboard interativo (abre em http://localhost:8501)
-streamlit run src/dashboard.py
+streamlit run app.py
 ````
 
 ---
